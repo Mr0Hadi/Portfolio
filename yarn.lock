@@ -492,7 +492,7 @@
 
 "@react-three/drei@^9.109.2":
   version "9.109.2"
-  resolved "https://registry.yarnpkg.com/@react-three/drei/-/drei-9.109.2.tgz#37e79924550614d7e3db32c5d115188c4e3f01af"
+  resolved "https://registry.npmjs.org/@react-three/drei/-/drei-9.109.2.tgz"
   integrity sha512-oUbfjiyPQeQch4Mi3jZvFKigMlc97/xvazxyjPBCGa8RP8cHZJl187eZI9Ha1WwkVaX80DfgN7bYAWXS4ywxmw==
   dependencies:
     "@babel/runtime" "^7.11.2"
@@ -521,7 +521,7 @@
 
 "@react-three/fiber@^8.16.8":
   version "8.16.8"
-  resolved "https://registry.yarnpkg.com/@react-three/fiber/-/fiber-8.16.8.tgz#4d2fecda7b38f534de6bdac49ca37c815cf9a4ef"
+  resolved "https://registry.npmjs.org/@react-three/fiber/-/fiber-8.16.8.tgz"
   integrity sha512-Lc8fjATtvQEfSd8d5iKdbpHtRm/aPMeFj7jQvp6TNHfpo8IQTW3wwcE1ZMrGGoUH+w2mnyS+0MK1NLPLnuzGkQ==
   dependencies:
     "@babel/runtime" "^7.17.8"
@@ -2590,7 +2590,7 @@ react-router@6.25.1:
 
 react-tilt@^1.0.2:
   version "1.0.2"
-  resolved "https://registry.npmjs.org/react-tilt/-/react-tilt-1.0.2.tgz"
+  resolved "https://registry.yarnpkg.com/react-tilt/-/react-tilt-1.0.2.tgz#89e1749939275204ebbc04565778abf972196cbe"
   integrity sha512-21tUUsmuw5id/6NDtKqwYTG4taVnw+BoUwIG6YsgPC9GI6cx4BnBuSqgriQYAYcv3bdGNzecaBL+rvQRAm28bg==
 
 react-use-measure@^2.1.1:
@@ -3044,7 +3044,7 @@ three-stdlib@^2.29.9:
 
 three@^0.167.1:
   version "0.167.1"
-  resolved "https://registry.yarnpkg.com/three/-/three-0.167.1.tgz#3fe4ba2b0a03fd662afe4977a56803d955b61689"
+  resolved "https://registry.npmjs.org/three/-/three-0.167.1.tgz"
   integrity sha512-gYTLJA/UQip6J/tJvl91YYqlZF47+D/kxiWrbTon35ZHlXEN0VOo+Qke2walF1/x92v55H6enomymg4Dak52kw==
 
 to-fast-properties@^2.0.0:
