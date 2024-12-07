@@ -3,47 +3,71 @@ import { Link } from "react-router-dom";
 
 import { styles } from "../styles";
 import { navLinks } from "../constants";
-import { logo, close, menu } from "../assets";
+import { logo, menu, close } from "../assets";
 
 const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      if (scrollTop > 100) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <nav
-      className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 bg-primary`}
+      className={`${
+        styles.paddingX
+      } w-full flex items-center py-5 fixed top-0 z-20 ${
+        scrolled ? "bg-primary" : "bg-transparent"
+      }`}
     >
-      <div className="flex items-center justify-between w-full mx-auto max-w-7x1">
+      <div className='w-full flex justify-between items-center max-w-7xl mx-auto'>
         <Link
-          to="/"
-          className="flex items-center gap-2"
+          to='/'
+          className='flex items-center gap-2'
           onClick={() => {
             setActive("");
-            window.scroll(0, 0);
+            window.scrollTo(0, 0);
           }}
         >
-          <img src={logo} alt="logo" className="object-contain w-6 h-6" />
-          <p className="text-white text-[15px] font-bold cursor-pointer flex ">
-            Hadi &nbsp; <span className="hidden sm:block">| javaScript</span>
+          <img src={logo} alt='logo' className='w-6 h-6 object-contain' />
+          <p className='text-white text-[15px] font-bold cursor-pointer flex '>
+            Adrian &nbsp;
+            <span className='sm:block hidden'> | JavaScript Mastery</span>
           </p>
         </Link>
-        <ul className="flex-row hidden gap-10 list-none sm:flex">
-          {navLinks.map((link) => (
+
+        <ul className='list-none hidden sm:flex flex-row gap-10'>
+          {navLinks.map((nav) => (
             <li
-              key={link.id}
+              key={nav.id}
               className={`${
-                active === link.title ? "text-white" : "text-secondary"
+                active === nav.title ? "text-white" : "text-secondary"
               } hover:text-white text-[15px] font-medium cursor-pointer`}
-              onClick={() => setActive(link.title)}
+              onClick={() => setActive(nav.title)}
             >
-              <a href={`#${link.id}`}>{link.title}</a>
+              <a href={`#${nav.id}`}>{nav.title}</a>
             </li>
           ))}
         </ul>
-        <div className="flex items-center justify-end flex-1 sm:hidden">
+
+        <div className='sm:hidden flex flex-1 justify-end items-center'>
           <img
             src={toggle ? close : menu}
-            alt="menu"
-            className="w-[28px] h-[28px] object-contain cursor-pointer"
+            alt='menu'
+            className='w-[28px] h-[28px] object-contain'
             onClick={() => setToggle(!toggle)}
           />
 
@@ -52,19 +76,19 @@ const Navbar = () => {
               !toggle ? "hidden" : "flex"
             } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
           >
-            <ul className="flex-col items-start justify-end gap-4 list-none ">
-              {navLinks.map((link) => (
+            <ul className='list-none flex justify-end items-start flex-1 flex-col gap-4'>
+              {navLinks.map((nav) => (
                 <li
-                  key={link.id}
-                  className={`${
-                    active === link.title ? "text-white" : "text-secondary"
-                  } font-poppins text-[16px] font-medium cursor-pointer`}
+                  key={nav.id}
+                  className={`font-poppins font-medium cursor-pointer text-[16px] ${
+                    active === nav.title ? "text-white" : "text-secondary"
+                  }`}
                   onClick={() => {
                     setToggle(!toggle);
-                    setActive(link.title);
+                    setActive(nav.title);
                   }}
                 >
-                  <a href={`#${link.id}`}>{link.title}</a>
+                  <a href={`#${nav.id}`}>{nav.title}</a>
                 </li>
               ))}
             </ul>
