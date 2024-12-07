@@ -17,67 +17,106 @@ const Contact = () => {
 
   const [loading, setLoading] = useState(false);
 
-  const handleChange = (e) => {};
+  const handleChange = (e) => {
+    const { target } = e;
+    const { name, value } = target;
 
-  const handleSubmit = (e) => {};
+    setForm({
+      ...form,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    emailjs
+      .send(
+        "service_z2kjk7i",
+        "template_gxbnfvw",
+        {
+          from_name: form.name,
+          to_name: "Hadi",
+          form_email: form.email,
+          to_email: "hadibalaei.dev7@gmail.com",
+          message: form.message,
+        },
+        "WSug4Ov7BgD-Izfhz"
+      )
+      .then(
+        () => {
+          setLoading(false);
+          alert("Thank you. I will get back to you as soon as possible.");
+
+          setForm({
+            name: "",
+            email: "",
+            message: "",
+          });
+        },
+        (error) => {
+          setLoading(false);
+          console.error(error);
+
+          alert("Ahh, something went wrong. Please try again.");
+        }
+      );
+  };
 
   return (
-    <div className="xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden">
+    <div
+      className={`xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden`}
+    >
       <motion.div
-        variants={slideIn("left", "Tween", 0.2, 1)}
+        variants={slideIn("left", "tween", 0.2, 1)}
         className="flex-[0.75] bg-black-100 p-8 rounded-2xl"
       >
-        <p className={styles.sectionSubTextText}>in touch</p>
+        <p className={styles.sectionSubText}>Get in touch</p>
         <h3 className={styles.sectionHeadText}>Contact.</h3>
 
         <form
           ref={formRef}
-          className="mt-12 flex flex-col gap-8"
           onSubmit={handleSubmit}
+          className="mt-12 flex flex-col gap-8"
         >
           <label className="flex flex-col">
             <span className="text-white font-medium mb-4">Your Name</span>
             <input
+              type="text"
               name="name"
-              type="text"
-              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
-              onChange={(e) => {
-                handleChange(e.target.value);
-              }}
               value={form.name}
-              placeholder="What's yoar Name?"
+              onChange={handleChange}
+              placeholder="What's your good name?"
+              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
             />
           </label>
           <label className="flex flex-col">
-            <span className="text-white font-medium mb-4">Your Email</span>
+            <span className="text-white font-medium mb-4">Your email</span>
             <input
-              name="email"
               type="email"
-              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
-              onChange={(e) => {
-                handleChange(e.target.value);
-              }}
+              name="email"
               value={form.email}
-              placeholder="What's yoar Email?"
+              onChange={handleChange}
+              placeholder="What's your web address?"
+              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
             />
           </label>
           <label className="flex flex-col">
-            <span className="text-white font-medium mb-4"> yoar message</span>
+            <span className="text-white font-medium mb-4">Your Message</span>
             <textarea
-              rows="7"
+              rows={7}
               name="message"
-              type="text"
-              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
-              onChange={(e) => {
-                handleChange(e.target.value);
-              }}
               value={form.message}
-              placeholder="What do you want to say?"
+              onChange={handleChange}
+              placeholder="What you want to say?"
+              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
             />
           </label>
+
           <button
             type="submit"
-            className="bg-tertiary py-3 px-8 outline-none w-fit text-white font-bold shadow-md shadow-primary rounded-xl"
+            className="bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary"
           >
             {loading ? "Sending..." : "Send"}
           </button>
@@ -85,8 +124,8 @@ const Contact = () => {
       </motion.div>
 
       <motion.div
-        variants={slideIn("left", "Tween", 0.2, 1)}
-        className="xl:flex-1 xl:h-auto md:h-[550px] h-[350]"
+        variants={slideIn("right", "tween", 0.2, 1)}
+        className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px]"
       >
         <EarthCanvas />
       </motion.div>
