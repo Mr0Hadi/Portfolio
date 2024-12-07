@@ -21,8 +21,8 @@ const Navbar = () => {
             window.scroll(0, 0);
           }}
         >
-          <img src={logo} alt="logo" className="object-contain w-9 h-9" />
-          <p className="text-white text-[18px] font-bold cursor-pointer flex ">
+          <img src={logo} alt="logo" className="object-contain w-6 h-6" />
+          <p className="text-white text-[15px] font-bold cursor-pointer flex ">
             Hadi &nbsp; <span className="hidden sm:block">| javaScript</span>
           </p>
         </Link>
@@ -32,7 +32,7 @@ const Navbar = () => {
               key={link.id}
               className={`${
                 active === link.title ? "text-white" : "text-secondary"
-              } hover:text-white text-[18px] font-medium cursor-pointer`}
+              } hover:text-white text-[15px] font-medium cursor-pointer`}
               onClick={() => setActive(link.title)}
             >
               <a href={`#${link.id}`}>{link.title}</a>

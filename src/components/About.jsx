@@ -12,18 +12,18 @@ const ServiceCard = ({ index, title, icon }) => {
     <Tilt className="xs:w-[250px] w-full">
       <motion.div
         variants={fadeIn("right", "spring", 0.5 * index, 0.75)}
-        className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card"
+        className="min-h-[220px] max-w-[210px] green-pink-gradient p-[1px] rounded-[20px] shadow-card"
       >
         <div
-          className="rounded-[20px] bg-tertiary py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col"
+          className="rounded-[20px] bg-tertiary py-5 px-12 min-h-[240px] max-w-[220px] flex justify-evenly items-center flex-col"
           options={{
             max: 45,
             scale: 1,
             speed: 450,
           }}
         >
-          <img src={icon} alt={title} className="object-contain w-16 h-16" />
-          <h3 className="text-white text-[20px] font-bold text-center">{title}</h3>
+          <img src={icon} alt={title} className="object-contain w-14 h-14" />
+          <h3 className="text-white text-[16px] font-bold text-center">{title}</h3>
         </div>
       </motion.div>
     </Tilt>
@@ -44,7 +44,7 @@ const About = () => {
         I'm hadi, very khaste. zendany dar shahed,
       </motion.p>
 
-      <div className="flex flex-wrap gap-10 mt-20">
+      <div className="flex flex-wrap mt-20 justify-center">
         {services.map((service, index) => (
           <ServiceCard key={service.title} index={index} {...service} />
         ))}
