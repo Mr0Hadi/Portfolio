@@ -1,30 +1,23 @@
 import {
-  mobile,
-  backend,
-  creator,
+  Software,
+  FullStack,
+  Architect,
   web,
   javascript,
-  typescript,
   html,
   css,
   reactjs,
-  redux,
   tailwind,
   nodejs,
-  mongodb,
   git,
-  figma,
-  docker,
-  meta,
-  starbucks,
-  tesla,
-  shopify,
-  carrent,
-  jobit,
-  tripguide,
-  threejs,
+  worldWise,
   mysql,
-  python
+  python,
+  intro,
+  UserManagementSystem,
+  toplearn,
+  codeyad,
+  udemy,
 } from "../assets";
 
 export const navLinks = [
@@ -44,20 +37,20 @@ export const navLinks = [
 
 const services = [
   {
-    title: "Web Developer",
+    title: "Web Application Specialist",
     icon: web,
   },
   {
-    title: "Backend Developer",
-    icon: backend,
+    title: "Full-Stack Engineer",
+    icon: FullStack,
   },
   {
-    title: "React Native Developer",
-    icon: mobile,
+    title: "Software Developer",
+    icon: Software,
   },
   {
-    title: "Content Creator",
-    icon: creator,
+    title: "Technical Architect",
+    icon: Architect,
   },
 ];
 
@@ -118,59 +111,71 @@ const technologies = [
 
 const experiences = [
   {
-    title: "React.js Developer",
-    company_name: "Starbucks",
-    icon: starbucks,
+    title: "Python",
+    company_name: "Toplearn",
+    icon: toplearn,
     iconBg: "#383E56",
-    date: "March 2020 - April 2021",
+    date: "March 2023 - June 2023",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Python Basics: Understanding fundamental concepts and setting up Python.",
+      "Variables and Data Types: Working with numeric, string, and list data types.",
+      "Operators: Utilizing various operators.",
+      "Loops: Implementing `for` and `while` loops.",
+      "Functions: Defining and using functions.",
+      "Object-Oriented Programming (OOP): Introduction to classes and objects.",
+      "Practical Project: Building a strong password generator.",
+      "This course contains 110 videos with a total time of 29 hours and 22 minutes.",
     ],
   },
   {
-    title: "React Native Developer",
-    company_name: "Tesla",
-    icon: tesla,
+    title: "Html & Css",
+    company_name: "Toplearn",
+    icon: toplearn,
     iconBg: "#E6DEDD",
-    date: "Jan 2021 - Feb 2022",
+    date: "June 2023 - August 2023",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Getting to know the basics of HTML and important tags for structuring web pages.",
+      "Learning CSS principles for styling HTML elements.",
+      "Understanding the concept of Box Model and managing spaces, margins and content.",
+      "Responsive design using media queries.Familiarity with layout techniques such as Flexbox and Grid",
+      "Working with fonts, icons and typography on the web",
+      "Create simple animations and transitions with CSS",
+      "This course includes 110 videos with a total time of 19 hours and 56 minutes",
     ],
   },
   {
-    title: "Web Developer",
-    company_name: "Shopify",
-    icon: shopify,
+    title: "JavaScript",
+    company_name: "Codeyad",
+    icon: codeyad,
     iconBg: "#383E56",
-    date: "Jan 2022 - Jan 2023",
+    date: "September 2023 - April 2024",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      " JavaScript Basics: Understanding syntax and core concepts.",
+      "DOM Manipulation: Interacting with and modifying HTML elements.",
+      "Functions and Events: Defining functions and handling user events.",
+      "Loops and Conditionals: Controlling the flow of programs.",
+      "Arrays and Objects: Managing and organizing data.",
+      "Advanced Concepts: Promises, Async/Await, and other modern features.",
+      "Practical Projects: Strengthening skills with hands-on programming.",
     ],
   },
   {
-    title: "Full stack Developer",
-    company_name: "Meta",
-    icon: meta,
+    title: "React JS",
+    company_name: "Udemy",
+    icon: udemy,
     iconBg: "#E6DEDD",
-    date: "Jan 2023 - Present",
+    date: "July 2024 - Present",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      " React: Core and advanced concepts, including components and state management.",
+      " Hooks: Using essential React hooks like `useState`, `useEffect`, and custom hooks.",
+      " Next.js: Server-side rendering (SSR) and project structuring.",
+      " Redux: Managing complex application state.",
+      " Tailwind CSS: Designing fast, responsive user interfaces.",
+      " Supabase: Implementing databases and authentication in React applications.",
+      " Practical Projects: Building over 10 real-world applications with these tools.",
     ],
   },
 ];
-
 
 // const testimonials = [
 //   {
@@ -201,68 +206,72 @@ const experiences = [
 
 const projects = [
   {
-    name: "Car Rent",
+    name: "WorldWise",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      "A world map that tracks your footsteps into every city you can think of. Creating a Single Page Application With React.js as Udemy Courses Tech Stack: useEffect, data fetching, custom hooks React Router, context API, memo, useMemo, useCallback",
     tags: [
       {
-        name: "react",
+        name: "React",
         color: "blue-text-gradient",
       },
       {
-        name: "mongodb",
+        name: "Context API",
         color: "green-text-gradient",
       },
       {
-        name: "tailwind",
+        name: "React Router",
         color: "pink-text-gradient",
       },
     ],
-    image: carrent,
-    source_code_link: "https://github.com/",
+    image: worldWise,
+    source_code_link: "https://github.com/Mr0Hadi/worldwise",
   },
   {
-    name: "Job IT",
+    name: "User Management System",
     description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+      "A full-stack user management app built with React, Express.js, MySQL, Tailwind CSS and DaisyUI, CRUD operations. Designed with a RESTful architecture for scalability and maintainability.",
     tags: [
       {
-        name: "react",
+        name: "React",
         color: "blue-text-gradient",
       },
       {
-        name: "restapi",
+        name: "MySQL,",
         color: "green-text-gradient",
       },
       {
-        name: "scss",
+        name: "DaisyUI",
         color: "pink-text-gradient",
       },
+      {
+        name: "Express.js",
+        color: "orange-text-gradient",
+      },
     ],
-    image: jobit,
-    source_code_link: "https://github.com/",
+    image: UserManagementSystem,
+    source_code_link: "https://github.com/Mr0Hadi/User-Management-System",
   },
   {
-    name: "Trip Guide",
+    name: "Storefront",
     description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+      "A practice project for designing the homepage of a studio equipment storefront using Tailwind CSS.Features: Modern and responsive design, Built with Tailwind CSS for fast and efficient styling, Simple, minimalistic homepage layout.",
     tags: [
       {
-        name: "nextjs",
+        name: "React",
         color: "blue-text-gradient",
       },
       {
-        name: "supabase",
+        name: "Tailwind",
         color: "green-text-gradient",
       },
       {
-        name: "css",
+        name: "Vite",
         color: "pink-text-gradient",
       },
     ],
-    image: tripguide,
-    source_code_link: "https://github.com/",
+    image: intro,
+    source_code_link: "https://github.com/Mr0Hadi/Tailwind-Project",
   },
 ];
 
-export { services, technologies, experiences, testimonials, projects };
+export { services, technologies, experiences, projects };
